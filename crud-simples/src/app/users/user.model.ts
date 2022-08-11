@@ -11,7 +11,7 @@ export interface Support {
   text: string;
 }
 
-export interface ResponseUser {
+export interface ResponseUsers {
   page: number;
   per_page: number;
   total: number;
@@ -20,6 +20,7 @@ export interface ResponseUser {
   support: Support;
 }
 
+// Post
 export interface RequestCreate {
   name: string;
   job: string;
@@ -30,4 +31,21 @@ export interface ResponseCreate {
   job: string;
   id: string;
   createdAt: Date;
+}
+
+// GetUser
+export interface ResponseUser {
+  data: User
+}
+
+// Update
+export interface RequestUpdate {
+  name: string;
+  job: string;
+}
+
+export interface ResponseUpdate {
+  name: string;
+  job: string;
+  updatedAt: Date;
 }

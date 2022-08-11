@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ResponseUser } from './user.model';
+import { ResponseUsers } from './user.model';
 import { UserService } from './user.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { UserService } from './user.service';
 })
 export class UsersComponent implements OnInit {
 
-  responseUsers!: ResponseUser;
+  responseUsers!: ResponseUsers;
 
   constructor(private userService: UserService) { }
 

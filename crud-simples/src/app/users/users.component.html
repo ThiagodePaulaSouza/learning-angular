@@ -8,6 +8,7 @@
     <tr *ngFor="let user of responseUsers.data">
       <td>{{user.first_name}}</td>
       <td>{{user.last_name}}</td>
+      <td><a href="/users/update/{{user.id}}">EDITAR</a></td>
     </tr>
   </tbody>
 </table>

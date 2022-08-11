@@ -1,0 +1,12 @@
+<h2>Você deseja deletar esse usuário?</h2>
+
+<div *ngIf="user">
+  <label>Id: <strong>{{user.id}}</strong>
+  </label>
+  <label>Nome: <strong>{{user.first_name}}</strong>
+  </label>
+  <label>SobreNome <strong>{{user.last_name}}</strong>
+  </label>
+  <button (click)="cancel()">Cancelar!</button>
+  <button (click)="delete()">Deletar?</button>
+</div>

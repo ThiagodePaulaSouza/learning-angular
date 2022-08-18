@@ -12,3 +12,14 @@
 <h3 [highlight]="'red'" [defaultColor]="'gray'">
   Texto com cores custumizadas
 </h3>
+
+<div *ngIf="mostrarCursos">
+  Lista de cursos aqui.
+</div>
+<div *ngElse="mostrarCursos">
+  Não existem cursos para serem listados.
+</div>
+
+<br><br>
+
+<button (click)="onMostrarCursos()">Mostrar ou Esconder os cursos</button>

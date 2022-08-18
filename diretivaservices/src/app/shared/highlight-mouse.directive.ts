@@ -1,26 +1,20 @@
-import { Directive, HostListener, ElementRef, Renderer2 } from '@angular/core';
+import { Directive, HostListener, HostBinding, ElementRef, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[highlightMouse]',
 })
 export class HighlightMouseDirective {
-  // ele é um metadado
+  // metadado
   @HostListener('mouseenter') onMouseOver() {
-    this._renderer.setStyle(
-      this._elementRef.nativeElement,
-      'background-color',
-      'yellow'
-    );
+    this.backgroundColor = 'yellow'
   }
   @HostListener('mouseout') onMouseOut() {
-    this._renderer.setStyle(
-      this._elementRef.nativeElement,
-      'background-color',
-      ''
-    );
+    this.backgroundColor = ''
   }
 
-  constructor(private _elementRef: ElementRef, private _renderer: Renderer2) {}
+  @HostBinding('style.backgroundColor') backgroundColor: string = ''
+
+  constructor() {}
 
   // O mouseleave é disparado também nos elementos filhos do elemento selecionado.
   // O mouseout dispara apenas no elemento selecionado.

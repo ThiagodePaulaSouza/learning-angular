@@ -12,7 +12,11 @@ export class HighlightMouseDirective {
     this.backgroundColor = ''
   }
 
-  @HostBinding('style.backgroundColor') backgroundColor: string = ''
+  @HostBinding('style.backgroundColor') get setColor(){
+    // Código Extra
+    return this.backgroundColor;
+  }
+  private backgroundColor: string = '';
 
   constructor() {}
 
